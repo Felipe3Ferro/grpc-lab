@@ -1,0 +1,24 @@
+syntax = "proto3"; // Define a versão do Protocol Buffers usada
+
+package com.ferro.unary; // Namespace lógico para evitar conflitos de nomes
+
+// Opções para o compilador protoc gerar código Java organizado
+option java_package = "com.ferro.unary"; // Define o pacote Java onde as classes serão criadas
+option java_multiple_files = true;      // Gera arquivos separados para cada mensagem e serviço
+
+// Definição do Serviço (Interface)
+service CalculatorService {
+  // RPC Unary: O cliente envia um SumRequest e aguarda um SumResponse
+  rpc Sum (SumRequest) returns (SumResponse);
+}
+
+// Estrutura de dados da Requisição
+message SumRequest {
+  int32 first_number = 1; // O número '1' é a tag de campo (identificador único na serialização)
+  int32 second_number = 2; // O número '2' é a tag de campo
+}
+
+// Estrutura de dados da Resposta
+message SumResponse {
+  int32 result = 1; // Contém o resultado da operação
+}
