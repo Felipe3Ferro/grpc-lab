@@ -1,4 +1,4 @@
-# Roadmap de Estudos: gRPC (Go) - Do Básico ao Avançado
+# Roadmap de Estudos: gRPC - Do Básico ao Avançado
 
 Este documento detalha a progressão de aprendizado sugerida para este repositório.
 
