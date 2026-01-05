@@ -1,0 +1,36 @@
+syntax = "proto3";
+package payroll;
+
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.ferro.buffer";
+option java_multiple_files = true;
+
+enum EmployeeStatus {
+  ACTIVE     = 0;
+  VACATION   = 1;
+  TERMINATED = 2;
+}
+
+message Employee {
+  int32                     id        = 1;
+  string                    name      = 2;
+  EmployeeStatus            status    = 3;
+  repeated string           skills    = 4;
+  map<string, string>       metadata  = 5;
+  google.protobuf.Timestamp hire_date = 6;
+
+    // CONCEITO NÍVEL 2: oneof (ou um, ou outro)
+  oneof document {
+    string cpf  = 7;
+    string cnpj = 8;
+  }
+}
+
+message PayrollRequest { Employee employee = 1; }
+
+message PayrollResponse { string message = 1; double net_salary = 2; }
+
+service PayrollService {
+  rpc CalculateSalary (PayrollRequest) returns (PayrollResponse);
+}

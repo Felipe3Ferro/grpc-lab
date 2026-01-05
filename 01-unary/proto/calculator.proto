@@ -1,7 +1,5 @@
 syntax = "proto3"; // Define a versão do Protocol Buffers usada
 
-package com.ferro.unary; // Namespace lógico para evitar conflitos de nomes
-
 // Opções para o compilador protoc gerar código Java organizado
 option java_package = "com.ferro.unary"; // Define o pacote Java onde as classes serão criadas
 option java_multiple_files = true;      // Gera arquivos separados para cada mensagem e serviço

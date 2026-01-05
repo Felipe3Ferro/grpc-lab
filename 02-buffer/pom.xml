@@ -11,7 +11,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>01-buffer</artifactId>
+    <artifactId>02-buffer</artifactId>
 
     <build>
         <plugins>
