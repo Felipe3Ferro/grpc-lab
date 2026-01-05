@@ -23,6 +23,7 @@ public class PayrollClient {
                 // Construindo o funcionário com tipos avançados
                 Employee employee = Employee.newBuilder()
                                 .setId(101)
+                                .setCpf("123.456.789-00")
                                 .setName("Felipe Ferro")
                                 .setStatus(EmployeeStatus.ACTIVE)
                                 .addSkills("Java") // repeated
