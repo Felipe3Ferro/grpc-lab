@@ -16,7 +16,7 @@ message Employee {
   int32                     id        = 1;
   string                    name      = 2;
   EmployeeStatus            status    = 3;
-  repeated string           skills    = 4;
+  repeated string           skills    = 4; // repeated (lista de valores)
   map<string, string>       metadata  = 5;
   google.protobuf.Timestamp hire_date = 6;
 
